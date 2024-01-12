@@ -13,7 +13,7 @@ Gener8-Llama2 is a simple Kubernetes resource YAML generator based on Meta's Lla
 Please make you have Python 3.8.X or higher version
 
 ### Requesting access to Llama Models
-1. Request for accessing Llama models [here](https://ai.meta.com/resources/models-and-libraries/llama-downloads/)
+Request for accessing Llama models [here](https://ai.meta.com/resources/models-and-libraries/llama-downloads/)
 ![image](https://github.com/PrasadG193/Gener8-Llama2/assets/25836028/17f92fa9-db87-41f0-ac82-7c9ad818f2fb)
 
 You will receive a mail with the URL to download the model which we will use later.
