@@ -3,12 +3,17 @@ Generate Kubernetes resource YAML manifests from a text prompt
 
 Gener8 is a simple Kubernetes resource YAML generator based on Meta's Llama-2 model
 
-## Download Llama2 model
+## Prerequisites
+
+### Setup Llama2 Model
+
+### Requesting access to Llama Models
 
 
-## Converting Downloaded Model
+### Converting Downloaded Model
 
-## Build and run Gener8-Llama2 locally
+
+## Build
 
 
 ## Contributing
