@@ -50,7 +50,7 @@ Now we have to convert the downloaded model to f16 format and quantize it to red
    $ python3 convert.py --outfile models/7B-chat/ggml-model-f16.bin --outtype f16 ../../llama2/llama/llama-2-7b-chat --vocab-dir ../../llama2/llama
    $ ./quantize  ./models/7B-chat/ggml-model-f16.bin ./models/7B-chat/ggml-model-q4_0.bin q4_0
    ```
-3. Make sure you change the `vocab_size` in llama/llama-2-7b-chat/params.json to 32000
+4. Make sure you change the `vocab_size` in llama/llama-2-7b-chat/params.json to 32000
    ```sh
    $ cat llama/llama-2-7b-chat/params.json
    {"dim": 4096, "multiple_of": 256, "n_heads": 32, "n_layers": 32, "norm_eps": 1e-06, "vocab_size": 32000}
