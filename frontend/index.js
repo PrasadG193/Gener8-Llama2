@@ -1,5 +1,4 @@
-//const URL = "http://localhost:8080/v1/convert"
-let BASE_URL = "https://us-central1-yaml2go.cloudfunctions.net/gener8";
+const BASE_URL = "http://127.0.0.1:5000/v1/generate"
 
 let yaml = document.getElementById("yamlGenerator");
 let codecopied = document.getElementById("codecopied");
