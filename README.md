@@ -19,35 +19,33 @@ Please make you have Python 3.8.X or higher version
 You will receive a mail with the URL to download the model which we will use later.
 ![image](https://github.com/PrasadG193/Gener8-Llama2/assets/25836028/86e123ea-36d8-4604-a61f-5f163d665f15)
 
-
-3. Request for accessing Llama models on [HuggingFace](https://huggingface.co/meta-llama/Llama-2-7b-hf) and clone the repository
-![image](https://github.com/PrasadG193/Gener8-Llama2/assets/25836028/250f597a-8038-4b06-b652-5cf939f472b2)
-
 ### Setup Llama2 Model
-Make sure you have all the repos downloaded: `llama`, `Llama-2-7b-hf`, and `llama.cpp`
-1. First download the `llama-2–7b-chat` model from llama.
+Make sure you have all the repos downloaded: `llama`, and `llama.cpp`
+
+First download the `llama-2–7b-chat` model from llama.
    ```sh
    $ cd llama/
    $ /bin/bash ./download.sh
      Enter the URL from email: https://download.llamameta.net/*?XXXXXXXXXXXXX
      Enter the list of models to download without spaces (7B,13B,70B,7B-chat,13B-chat,70B-chat), or press Enter for all: 7B-chat
    ```
-2. Copy the downloaded model to `Llama-2-7b-chat-hf`
-   ```sh
-   $ cp -r ./models/ ../Llama-2-7b-chat-hf/
-   ```
    
 ### Converting and Quantizing Downloaded Model
 Now we have to convert the downloaded model to f16 format and quantize it to reduce its size.
-1. First activate a virtual env and install all the requirements
+
+1. Build llama.cpp project
+    ```
+    $ cd llama.cpp
+    $ make
+    
+2. First activate a virtual env and install all the requirements
    ```sh
-   $ cd ../llama.cpp
    $ python3 -m venv llama2
    $ source llama2/bin/activate
    $ python3 -m pip install -r requirements.txt
    ```
 
-2. Then convert the model into f16 format and quantize it
+3. Then convert the model into f16 format and quantize it
    ```sh
    $ python3 convert.py --outfile models/7B-chat/ggml-model-f16.bin --outtype f16 ../../llama2/llama/llama-2-7b-chat --vocab-dir ../../llama2/llama
    $ ./quantize  ./models/7B-chat/ggml-model-f16.bin ./models/7B-chat/ggml-model-q4_0.bin q4_0
